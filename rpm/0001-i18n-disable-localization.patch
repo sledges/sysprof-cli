@@ -1,0 +1,31 @@
+From e82f528d785b21654d9eaab29e5057b55928928a Mon Sep 17 00:00:00 2001
+From: Simonas Leleiva <simonas.leleiva@meramo.co.uk>
+Date: Thu, 26 Mar 2020 23:55:54 +0000
+Subject: [PATCH] i18n: disable localization
+
+Signed-off-by: Simonas Leleiva <simonas.leleiva@jolla.com>
+---
+ src/sysprofd/meson.build | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/src/sysprofd/meson.build b/src/sysprofd/meson.build
+index bf1a652..9add19f 100644
+--- a/src/sysprofd/meson.build
++++ b/src/sysprofd/meson.build
+@@ -64,11 +64,11 @@ configure_file(
+     install_dir: systemdunitdir,
+ )
+
+-i18n.merge_file(
++configure_file(
+         input: 'org.gnome.sysprof3.policy.in',
+        output: 'org.gnome.sysprof3.policy',
+-       po_dir: podir,
+       install: true,
++configuration: sysprofdconf,
+   install_dir: join_paths(datadir, 'polkit-1/actions'),
+ )
+
+-- 
+1.8.3-rc3
+
