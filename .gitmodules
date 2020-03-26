@@ -1,0 +1,3 @@
+[submodule "sysprof"]
+	path = sysprof
+	url = https://git.sailfishos.org/mirror/sysprof.git
